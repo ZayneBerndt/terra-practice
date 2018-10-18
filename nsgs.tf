@@ -1,10 +1,4 @@
-*/resource "azurerm_resource_group" "nsgs" {
-   name         = "NSGs"
-   location     = "${var.loc}"
-   tags         = "${var.tags}"
-}
-
-resource "azurerm_network_security_group" "resource_group_default" {
+ resource "azurerm_network_security_group" "resource_group_default" {
    name = "ResourceGroupDefault"
    resource_group_name  = "${azurerm_resource_group.nsgs.name}"
    location             = "${azurerm_resource_group.nsgs.location}"
